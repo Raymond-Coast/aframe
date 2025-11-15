@@ -1,0 +1,325 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="simple-navmesh-constraint.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- ----- -->
+      <!-- assets -->
+      <!-- ----- -->
+      <a-assets>
+         <img
+          id="Anotacija"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/ANO_6sem-RaimondsK-01-2.jpg?v=1745925481379"
+        /><img />
+        <img
+          id="marmors"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/Ziarat_White_Marble_tgzkdehv_1K_BaseColor3.webp?v=1743346302781"
+        /><img />
+        <img
+          id="normalmap1"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/normalmap-texture.png?v=1743351909539"
+        /><img />
+        <img
+          id="normalmap2"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/normalmap-texture2.png?v=1744560924483"
+        /><img />
+        <img
+          id="normalmap3"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/normalmap-texture3.png?v=1744560921128"
+        /><img />
+        <img
+          id="normalmap4"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/normalmap-texture4.png?v=1744561067171"
+        /><img />
+        <img
+          id="normalmap5"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/normalmap-texture5.png?v=1745484072569"
+        /><img />
+        <img
+          id="normalmap6"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/normalmap-texture6.png?v=1745484075104"
+        /><img />
+        <img
+          id="normalmap7"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/normalmap-texture7.png?v=1745484076840"
+        /><img />
+        <img
+          id="venecija1"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/venice-02.png?v=1744561530653"
+        /><img />
+        <img
+          id="venecija2"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/venice-01.png?v=1743352601835"
+        /><img />
+        <img
+          id="venecija3"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/venice-03-3.png?v=1744563556241"
+        /><img />
+        <img
+          id="venecija4"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/venice-04.png?v=1745678165552"
+        /><img />
+        <img
+          id="venecija5"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/venice-06.png?v=1745711633195"
+        /><img />
+        <img
+          id="venecija6"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/venice-05-5.png?v=1745682692405"
+        /><img />
+        <img
+          id="venecija7"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/venice-01.png?v=1743352601835"
+        /><img />
+
+        <a-asset-item
+          id="gondola"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/Gondola-04.glb?v=1743987241228"
+        ></a-asset-item>
+        <a-asset-item
+          id="birza"
+          src="https://cdn.glitch.me/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/RIGAS-BIRZA-bez-sliedem.glb?v=1745678043296"
+        ></a-asset-item>
+        <a-asset-item
+          id="birzas-caurumi"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/RIGAS-BIRZA-caurumi1.glb?v=1745163705615"
+        ></a-asset-item>
+        <a-asset-item
+          id="udens"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/udens01.glb?v=1743351695704"
+        ></a-asset-item>
+        <a-asset-item
+          id="grida2"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/navmesh2.glb?v=1743344502875"
+        ></a-asset-item>
+        <a-asset-item
+          id="izstade"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/trepites.glb?v=1743351695336"
+        ></a-asset-item>
+        <a-asset-item
+          id="sliedes"
+          src="https://cdn.glitch.global/65fe72e6-58ea-4555-a7c5-bf12c7f6b653/RIGAS-BIRZA-sliedes.glb?v=1745678043984"
+        ></a-asset-item>
+      </a-assets>
+
+      <!-- ----- -->
+      <!-- telpa -->
+      <!-- ----- -->
+      <a-gltf-model src="#gondola"></a-gltf-model>
+      <a-gltf-model src="#birza"></a-gltf-model>
+      <a-gltf-model src="#sliedes" position="0 2.39 0"></a-gltf-model>
+      <a-gltf-model src="#birzas-caurumi"></a-gltf-model>
+      <a-gltf-model src="#udens" position="0 0.2 0"></a-gltf-model>
+
+      <a-gltf-model
+        src="#izstade"
+        position="0 0 0"
+        animation-mixer=""
+      ></a-gltf-model>
+      
+<a-plane src="#Anotacija" shader="standard" position="-10.51977 1.7191 2.31785" rotation="0 175.7697005590534 0" scale="1.06767 0.67264 1.06767"></a-plane>
+
+      <!-- - 1 - -->
+      <a-sphere
+        shader="standard"
+        side="front"
+        material="src: #marmors; normalMap: #normalmap1"
+        position="-6.62705 1.0647 -3.86809"
+        scale="0.81204 0.81204 0.81204"
+      ></a-sphere>
+      <a-sphere
+        shader="flat"
+        side="back"
+        material="src: #venecija1"
+        position="-6.62705 1.0647 -3.86809"
+        scale="0.81204 0.81204 0.81204"
+      ></a-sphere>
+
+      <!-- - 2 - -->
+      <a-sphere
+        shader="standard"
+        side="front"
+        material="src: #marmors ; normalMap: #normalmap2"
+        position="4.21888 3.47322 5.69308"
+        scale="3.4349 3.4349 3.4349"
+      ></a-sphere>
+      <a-sphere
+        shader="flat"
+        side="back"
+        material="src: #venecija2"
+        position="4.21888 3.47322 5.69308"
+        scale="3.4349 3.4349 3.4349"
+      ></a-sphere>
+
+      <!-- - 3 - -->
+      <a-sphere
+        shader="standard"
+        side="front"
+        material="src: #marmors ; normalMap: #normalmap3"
+        position="-1.19094 2.91347 -9.273"
+        scale="2.84677 2.84677 2.84677"
+      ></a-sphere>
+      <a-sphere
+        shader="flat"
+        side="back"
+        material="src: #venecija3"
+        position="-1.19094 2.91347 -9.273"
+        scale="2.84677 2.84677 2.84677"
+      ></a-sphere>
+
+      <!-- - 4 - -->
+      <a-sphere
+        shader="standard"
+        side="front"
+        material="src: #marmors ; normalMap: #normalmap4"
+        position="3.698 1.49684 -6.001"
+        scale="1.46166 1.46166 1.46166"
+      ></a-sphere>
+      <a-sphere
+        shader="flat"
+        side="back"
+        material="src: #venecija4"
+        position="3.698 1.49684 -6.001"
+        scale="1.46166 1.46166 1.46166"
+      ></a-sphere>
+
+      <!-- - 5 - -->
+      <a-sphere
+        shader="standard"
+        side="front"
+        material="src: #marmors ; normalMap: #normalmap5"
+        position="-2.56271 1.024 9.45266"
+        scale="0.72387 0.72387 0.72387"
+      ></a-sphere>
+      <a-sphere
+        shader="flat"
+        side="back"
+        material="src: #venecija5"
+        position="-2.56271 1.024 9.45266"
+        scale="0.72387 0.72387 0.72387"
+      ></a-sphere>
+
+      <!-- - 6 - -->
+      <a-sphere
+        shader="standard"
+        side="front"
+        material="src: #marmors ; normalMap: #normalmap6"
+        position="-5.2372 1.45878 6.26479"
+        scale="1.28165 1.28165 1.28165"
+      ></a-sphere>
+      <a-sphere
+        shader="flat"
+        side="back"
+        material="src: #venecija6"
+        position="-5.2372 1.45878 6.26479"
+        scale="1.28165 1.28165 1.28165"
+      ></a-sphere>
+
+      <!-- - 7 - -->
+      <a-sphere
+        shader="standard"
+        side="front"
+        material="src: #marmors ; normalMap: #normalmap7"
+        position="-1.357 5 0.3851"
+        scale="0.42 0.42 0.42"
+      ></a-sphere>
+      <a-sphere
+        visible="false"
+        shader="flat"
+        side="back"
+        material="src: #venecija7"
+        position="-1.35664 1.19291 0.19029"
+        scale="0.97594 0.97594 0.97594"
+      ></a-sphere>
+
+      <!---- <a-obj-model
+        id="navmesh2"
+        src="#grida"
+                   position="0 0.2 0"
+        color="red"
+        visible="false"
+      ></a-obj-model> ---->
+      <a-gltf-model
+        id="navmesh"
+        src="#grida2"
+        position="0 0 0"
+        color=""
+        visible="false"
+      ></a-gltf-model>
+
+      <a-entity
+        id="rig"
+        movement-controls="speed:0.1"
+        position="-21 1.6 -6"
+        rotation="0 -130 0"
+      >
+        <a-entity
+          camera="fov: 100"
+          look-controls="pointerLockEnabled: true"
+          simple-navmesh-constraint="navmesh:#navmesh"
+        ></a-entity>
+      </a-entity>
+
+      <!-- ---- -->
+      <!-- vide -->
+      <!-- ---- -->
+      <a-sky color="#d7fff3"></a-sky>
+      <!-- <a-entity light="type: ambient; color: #BBB; intensity: 1"></a-entity> -->
+      <a-light
+        type="ambient"
+        shadow=""
+        color="#d9ffff"
+        intensity="0.01"
+        visible=""
+      ></a-light>
+
+      <a-light
+        type="point"
+        color="#fdf8d0"
+        intensity="0.2"
+        position="-4.17692 5.44123 11.13728"
+      ></a-light>
+      <a-light
+        type="point"
+        color="#fdf8d0"
+        intensity="0.2"
+        position="-4.17692 5.44123 0.41521"
+      ></a-light>
+      <a-light
+        type="point"
+        color="#fdf8d0"
+        intensity="0.2"
+        position="-4.17692 5.44123 -10.43334"
+      ></a-light>
+      <a-light
+        type="point"
+        color="#fdf8d0"
+        intensity="0.2"
+        position="1.44938 5.44123 -10.43334"
+      ></a-light>
+      <a-light
+        type="point"
+        color="#fdf8d0"
+        intensity="0.2"
+        position="1.44938 5.44123 0.45577"
+      ></a-light>
+      <a-light
+        type="point"
+        color="#fdf8d0"
+        intensity="0.2"
+        position="1.44938 5.44123 11.18673"
+      ></a-light>
+      <a-light
+        type="point"
+        color="#dffffb"
+        intensity="2.04"
+        decay="1.35"
+        distance="30.89"
+        position="-17.25365 14.45014 0"
+      ></a-light>
+    </a-scene>
+  </body>
+</html>
